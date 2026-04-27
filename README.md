@@ -29,8 +29,8 @@ See the build instructions below.
 - KissFFT
 
 ### 📦 Build
-To build this project, modify the `CMakeLists.txt` file to provide paths to your dependencies.  
-Then build with
+To build this project, modify the `CMakeLists.txt` file to provide paths to your installation of the above dependencies.  
+Then build with the following commands: 
 
 ```bash
 mkdir build
