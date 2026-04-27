@@ -74,6 +74,7 @@ ac.exe <audio file>
 | `L`                            | Enable loop                     |
 | `V`                            | Toggle visualization modes      |
 | `R`                            | Toggle rainbow mode             |
+| `T`                            | Toggle timestamp                |
 | `A` / `D`                      | Slow down / Speed up audio      |
 | `←` / `→`                      | Seek backward / forward         |
 | `Ctrl` + `←` / `Ctrl` + `→`    | Seek to start / end             |
@@ -84,24 +85,24 @@ ac.exe <audio file>
 
 This project supports all audio formats supported by **libsndfile**, including both uncompressed and compressed formats where supported by your libsndfile build.
 
-| Format        | Description                            | File Extensions              |
-|---------------|--------------------------------------|------------------------------|
+| Format        | Description                           | File Extensions              |
+|---------------|---------------------------------------|------------------------------|
 | WAV           | Waveform Audio File Format            | `.wav`                       |
 | AIFF / AIFC   | Audio Interchange File Format         | `.aif`, `.aiff`, `.aifc`     |
 | AU / SND      | NeXT/Sun audio file                   | `.au`, `.snd`                |
-| PAF           | Ensoniq Paris                        | `.paf`                       |
+| PAF           | Ensoniq Paris                         | `.paf`                       |
 | SVX           | Amiga IFF 8SVX format                 | `.iff`, `.svx`               |
 | NIST (Sphere) | NIST SPHERE audio format              | `.nist`, `.nss`, `.nvf`      |
-| VOC           | Creative Labs VOC format               | `.voc`                       |
+| VOC           | Creative Labs VOC format              | `.voc`                       |
 | IRCAM         | Institut de Recherche et Coordination Acoustique/Musique | `.sf`           |
-| W64           | Sonic Foundry 64-bit RIFF              | `.w64`                       |
-| MAT4 / MAT5   | Matlab (Mathworks) format              | `.mat`                       |
-| PVF           | Portable Voice Format                  | `.pvf`                       |
-| XI            | Fasttracker 2 Instrument file          | `.xi`                        |
-| HTK           | Hidden Markov Model Toolkit file       | `.htk`                       |
-| SDS           | MIDI Sample Dump Standard               | `.sds`                       |
-| AVR           | Audio Visual Research                   | `.avr`                       |
-| WAVEX         | Extended WAV                           | `.wav`                       |
+| W64           | Sonic Foundry 64-bit RIFF             | `.w64`                       |
+| MAT4 / MAT5   | Matlab (Mathworks) format             | `.mat`                       |
+| PVF           | Portable Voice Format                 | `.pvf`                       |
+| XI            | Fasttracker 2 Instrument file         | `.xi`                        |
+| HTK           | Hidden Markov Model Toolkit file      | `.htk`                       |
+| SDS           | MIDI Sample Dump Standard             | `.sds`                       |
+| AVR           | Audio Visual Research                 | `.avr`                       |
+| WAVEX         | Extended WAV                          | `.wav`                       |
 | SD2           | Sound Designer 2                      | `.sd2`                       |
 | FLAC          | Free Lossless Audio Codec             | `.flac`                      |
 | OGG (Vorbis)  | Ogg Vorbis audio                      | `.ogg`                       |
