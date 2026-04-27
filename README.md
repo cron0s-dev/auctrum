@@ -41,7 +41,7 @@ ninja
 > **Windows users:** After building the project, be sure to copy the required DLL files into the `build/bin`
 directory (where the executable resides) for the application to run correctly.
 
-# 🔧 Configuration
+## 🔧 Configuration
 Auctrum includes a configuration header file at `src/config.h` that allows users to customise various compile-time parameters to their preferences:
 
 - FFT size
