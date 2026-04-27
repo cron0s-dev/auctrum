@@ -21,14 +21,14 @@ Simply download the executable and run it.
 For **Linux** and **macOS**, the project must be built from source.
 See the build instructions below.
 
-## ⚙️ Dependencies
+### ⚙️ Dependencies
 - SDL3
 - SDL_image
 - SDL_ttf
 - Libsndfile
 - KissFFT
 
-## 📦 Build
+### 📦 Build
 To build this project, modify the `CMakeLists.txt` file to provide paths to your dependencies.  
 Then build with
 
