@@ -47,7 +47,7 @@ directory (where the executable resides) for the application to run correctly.
 2. Press **E** to open an audio file.
 3. Select a supported format (WAV, FLAC, OGG, MP3, ...).
 
-Alternatively, you can also provide an audio file via the commandline:
+Alternatively, you can also provide an audio file via the command line:
 ```
 ac.exe <audio file>
 ```
