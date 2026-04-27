@@ -1,0 +1,7 @@
+CompileFlags:
+  Add:
+    - -ID:/dev/libs/sdl/sdl3/include/
+    - -ID:/dev/libs/sdl/sdl3_image/include
+    - -ID:/dev/libs/sdl/sdl3_ttf/include
+    - -ID:/dev/libs/audio/libsndfile/include/
+    - -ID:/dev/libs/math/kissfft/

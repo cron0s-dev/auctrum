@@ -1,0 +1,8 @@
+# Build system output
+build/
+bin/
+
+# C/C++ build artifacts
+*.o
+*.obj
+*.exe
