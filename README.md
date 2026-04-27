@@ -1,6 +1,6 @@
 # Auctrum
 
-> A cross-platform real-time music player and audio visualizer built with SDL3, libsndfile, and KissFFT.
+> A cross-platform real-time music player and visualizer built with SDL3, libsndfile, and KissFFT.
 
 ## 📸 Preview
 
