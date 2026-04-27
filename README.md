@@ -14,7 +14,7 @@
 - Looping and seek controls
 - Cross-platform (Windows, Linux, macOS)
 
-## Getting started
+## 🚀 Getting started
 Pre-built binaries are available for **Windows**.
 Simply download the executable and run it.
 
@@ -41,7 +41,7 @@ ninja
 > **Windows users:** After building the project, be sure to copy the required DLL files into the `build/bin`
 directory (where the executable resides) for the application to run correctly.
 
-## 🧭 Usage
+## 💡 Usage
 
 1. Launch the application.
 2. Press **E** to open an audio file.
