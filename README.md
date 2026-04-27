@@ -52,7 +52,7 @@ Alternatively, you can also provide an audio file via the commandline:
 ac.exe <audio file>
 ```
 
-## 🎮 Controls
+### 🎮 Controls
 
 | Key                            | Action                          |
 |--------------------------------|---------------------------------|
@@ -68,7 +68,7 @@ ac.exe <audio file>
 | `↑` / `↓`                      | Increase / Decrease volume      |
 | `Q`                            | Exit application                |
 
-## 🎵 Supported Audio Formats
+### 🎵 Supported Audio Formats
 
 This project supports all audio formats supported by **libsndfile**, including both uncompressed and compressed formats where supported by your libsndfile build.
 
