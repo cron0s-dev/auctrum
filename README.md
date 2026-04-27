@@ -41,6 +41,18 @@ ninja
 > **Windows users:** After building the project, be sure to copy the required DLL files into the `build/bin`
 directory (where the executable resides) for the application to run correctly.
 
+# 🔧 Configuration
+Auctrum includes a configuration header file at `src/config.h` that allows users to customise various compile-time parameters to their preferences:
+
+- FFT size
+- Number of spectrum bars
+- Window width and height
+- Window opacity
+- Other audio playback and visualisation parameters
+
+These options are intended for users who want to modify the visualizer’s behavior or appearance at build time.
+If you change any values, simply rebuild the project.
+
 ## 💡 Usage
 
 1. Launch the application.
@@ -108,3 +120,13 @@ This project supports all audio formats supported by **libsndfile**, including b
 
 - **Q:** How can I change visualization modes?  
   **A:** Press the `V` key during playback.
+
+## 🙏 Credits
+
+Auctrum is powered by these excellent open-source libraries; make sure to check them out:
+
+- [SDL3](https://libsdl.org/)
+- [SDL_image](https://github.com/libsdl-org/SDL_image)
+- [SDL_ttf](https://github.com/libsdl-org/SDL_ttf)
+- [libsndfile](https://libsndfile.github.io/libsndfile/)
+- [KissFFT](https://github.com/mborgerding/kissfft)
