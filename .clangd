@@ -4,4 +4,4 @@ CompileFlags:
     - -ID:/dev/libs/sdl/sdl3_image/include
     - -ID:/dev/libs/sdl/sdl3_ttf/include
     - -ID:/dev/libs/audio/libsndfile/include/
-    - -ID:/dev/libs/math/kissfft/
+    - -ID:/dev/libs/math/kissfft/include/
