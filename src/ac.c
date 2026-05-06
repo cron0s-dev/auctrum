@@ -15,15 +15,19 @@
 
 #include "config.h"
 
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
+
 typedef struct {
-  SNDFILE* file;
-  sf_count_t pos;
-  sf_count_t frames;
-  int frameSize;
-  SDL_AudioSpec spec;
-  SDL_AudioStream* stream;
-  SDL_AudioDeviceID deviceId;
-  SDL_Mutex* mutex;
+    SNDFILE* file;
+    sf_count_t pos;
+    sf_count_t frames;
+    int frameSize;
+    SDL_AudioSpec spec;
+    SDL_AudioStream* stream;
+    SDL_AudioDeviceID deviceId;
+    SDL_Mutex* mutex;
 } AudioData;
 
 static SDL_DialogFileFilter filters[] = {
@@ -126,9 +130,9 @@ static void should_audio_loop(AudioData* audio, bool loop);
 static SDL_FRect* create_bars(SDL_Window* window, size_t bar_num);
 
 static bool draw_bars(
-  SDL_FRect* rects,
-  size_t nBar,
-  double dt
+    SDL_FRect* rects,
+    size_t nBar,
+    double dt
 );
 
 static void visualize_bars(int hopSize);
@@ -136,6 +140,14 @@ static void draw_timestamp(TTF_Font* font, AudioData audio);
 static void set_color_rainbow(SDL_Color* color, float progress);
 static void handle_key_events(SDL_Window* window, SDL_Event *event);
 static void cleanup(void);
+
+#if defined(_WIN32)
+static void trim_memory() {
+    HANDLE hHeap = GetProcessHeap();
+    HeapCompact(hHeap, 0);
+    SetProcessWorkingSetSize(GetCurrentProcess(), -1, -1);
+}
+#endif
 
 int main(int argc, char** argv) {
     if (!SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO)) {
@@ -418,6 +430,10 @@ void file_dialog_callback(void* userdata, const char* const* filelist, int filte
     set_audio_speed(audio->stream, &speed);
     isPlaying = true;
     isFinished = false;
+
+#if defined(_WIN32)
+    trim_memory();
+#endif
 }
 
 void audio_stream_callback(void* userdata, SDL_AudioStream* stream, int additionalAmount, int totalAmount) {
@@ -888,19 +904,39 @@ void handle_key_events(SDL_Window* window, SDL_Event *event) {
                 break;
 
             case SDLK_E:
-                SDL_ShowOpenFileDialog(file_dialog_callback, &audio, window,
-                                           filters, nFilters, "./", false);
+                if (event->key.repeat != 0) {
+                    break;
+                }
+                SDL_ShowOpenFileDialog(
+                    file_dialog_callback,
+                    &audio,
+                    window,
+                    filters,
+                    nFilters,
+                    "./",
+                    false
+                );
                 break;
 
             case SDLK_R:
+                if (event->key.repeat != 0) {
+                    break;
+                }
                 isRainbow = !isRainbow;
                 break;
             
             case SDLK_T:
+                if (event->key.repeat != 0) {
+                    break;
+                }
+
                 showTimestamp = !showTimestamp;
                 break;
 
             case SDLK_V:
+                if (event->key.repeat != 0) {
+                    break;
+                }
                 isMirrored = !isMirrored;
                 break;
 
@@ -962,12 +998,19 @@ void handle_key_events(SDL_Window* window, SDL_Event *event) {
                 break;
 
             case SDLK_L:
+                if (event->key.repeat != 0) {
+                    break;
+                }
                 if (!audio.stream)
                     break;
                 isLooping = !isLooping;
                 break;
 
             case SDLK_M:
+                if (event->key.repeat != 0) {
+                    break;
+                }
+
                 if (!audio.stream)
                     break;
 
@@ -1011,10 +1054,15 @@ void handle_key_events(SDL_Window* window, SDL_Event *event) {
                 }
                 break;
 
-            case SDLK_MEDIA_PLAY_PAUSE:
             case SDLK_SPACE:
-                if (!audio.stream)
+            case SDLK_MEDIA_PLAY_PAUSE:
+                if (event->key.repeat != 0) {
                     break;
+                }
+
+                if (!audio.stream) {
+                    break;
+                }
 
                 if (isFinished) {
                     double backsec =

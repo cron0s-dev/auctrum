@@ -11,7 +11,7 @@
 // VISUALIZER CONSTANTS
 #define ATTACK 100.0f 
 #define DECAY 100.0f 
-#define MAX_FREQ 12000.0f
+#define MAX_FREQ 16000.0f
 #define MIN_FREQ 20.0f
 #define MAX_DB 0.0f // dBFS
 #define MIN_DB -80.0f // dBFS
