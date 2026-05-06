@@ -391,6 +391,9 @@ bool open_audio_file(SDL_Window* window, const char* filepath, AudioData* audio)
 
 void file_dialog_callback(void* userdata, const char* const* filelist, int filter) {
     if (!filelist || *filelist == NULL) {
+#if defined(_WIN32)
+        trim_memory();
+#endif
         return;
     }
 
